@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Nunito;
+    color: #fdfff5;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+::selection {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+#first, #second, #third {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+
+#first {
+    justify-content: center;
+    align-items: center;
+}
+
+#second {
+    background: #222;
+}
+
+#third {
+    background: #111;
+}
+
+.veryBig {
+    margin: 10px;
+    text-align: end;
+    font-family: Montserrat;
+    font-size: 210px;
+    font-weight: 800;
+    line-height: 1;
+
+    transition: transform 0.1s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.small {
+    opacity: .2;
+    margin-right: 10px;
+    align-self: end;
+}
+
+#Ekaterina {
+    font-size: 155px;
+}
+
+
+
+
