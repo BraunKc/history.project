@@ -34,17 +34,31 @@ function animate() {
         object.position.x = -5;
         object.position.y = -1 + Math.sin(Date.now() * 0.001) * 0.2;
 
-        object.scale.set(0.7, 1, 1);
+        object.scale.set(10, 10, 10);
     }
 
 	renderer.render( scene, camera );
 
-    window.addEventListener("resize", function () {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        animate();
-    });
+// Функция дебаунсинга для ограничения частоты выполнения функции
+function debounce(func, delay) {
+    let timeout;
+    return function () {
+        const context = this;
+        const args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+            func.apply(context, args);
+        }, delay);
+    };
+}
+
+// Слушатель события resize с дебаунсингом
+window.addEventListener("resize", debounce(function () {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    animate();
+}, 250)); // Можно настроить задержку по необходимости
 }
 animate();
 

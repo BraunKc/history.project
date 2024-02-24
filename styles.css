@@ -22,7 +22,6 @@ html, body {
 
 #first, #second, #third {
     display: flex;
-    flex-direction: column;
     height: 100%;
     width: 100%;
     background: #000;
@@ -38,7 +37,8 @@ html, body {
 }
 
 .blur {
-    position: fixed;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
     background: radial-gradient(#00000091, #000 90%);
@@ -46,11 +46,11 @@ html, body {
 }
 
 #second {
-    background: #222;
+    background: #000;
 }
 
 #third {
-    background: #111;
+    background: #555;
 }
 
 .veryBig {
