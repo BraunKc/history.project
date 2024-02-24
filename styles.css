@@ -34,8 +34,7 @@ html, body {
     background-image: url(images/Nizhniy\ Novgorod.jpg);
     background-size: cover; /* Растягиваем картинку на весь экран */
     background-position: center; /* Центрируем картинку */
-    background-repeat: no-repeat; /* Отключаем повторение фона */
-    
+    background-repeat: no-repeat; /* Отключаем повторение фона */ 
 }
 
 .blur {
@@ -58,7 +57,7 @@ html, body {
     margin: 10px;
     text-align: end;
     font-family: Montserrat;
-    font-size: 210px;
+    font-size: 11vw;
     font-weight: 800;
     line-height: 1;
     padding-right: 10px;
@@ -68,8 +67,9 @@ html, body {
     will-change: transform;
 }
 
-.small {
+.creators {
     width: 100%;
+    font-size: 1vw;
     text-align: end;
     padding-right: 10px;
     opacity: .2;
@@ -77,9 +77,8 @@ html, body {
 }
 
 #Ekaterina {
-    font-size: 155px;
+    font-size: 7vw;
 }
-
 
 
 

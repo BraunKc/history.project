@@ -98,6 +98,5 @@ document.addEventListener('DOMContentLoaded', function() {
         loop: true,
     });
     // Запускаем анимацию
-    typeitInstance.go();
 });
 
