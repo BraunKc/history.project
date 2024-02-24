@@ -1,7 +1,5 @@
 //Import the THREE.js library
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
-// To allow for the camera to move around the scene
-import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 // To allow for importing the .gltf file
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
 
@@ -30,9 +28,13 @@ scene.add( directionalLight );
 
 function animate() {
 	requestAnimationFrame( animate );
-
     if (object) {
         object.rotation.y += 0.005;
+
+        object.position.x = -5;
+        object.position.y = -1 + Math.sin(Date.now() * 0.001) * 0.2;
+
+        object.scale.set(0.7, 1, 1);
     }
 
 	renderer.render( scene, camera );
@@ -41,6 +43,9 @@ function animate() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
-      });
+        animate();
+    });
 }
 animate();
+
+

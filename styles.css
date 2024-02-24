@@ -41,8 +41,8 @@ html, body {
     position: fixed;
     height: 100%;
     width: 100%;
-    background: #00000070;
-    backdrop-filter: blur(8px);
+    background: radial-gradient(#00000091, #000 90%);
+    backdrop-filter: blur(3px);
 }
 
 #second {
@@ -54,7 +54,6 @@ html, body {
 }
 
 .veryBig {
-    z-index: 1;
     margin: 10px;
     text-align: end;
     font-family: Montserrat;
@@ -78,19 +77,12 @@ html, body {
 }
 
 #Ekaterina {
+    z-index: 1;
     font-size: 7vw;
 }
 
 #container3D {
-    height: 100%;
-    width: 100%;
-    border: 5px solid red;
-}
-
-.sceneCoin {
     z-index: 0;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    border: 5px solid green;
+    height: 0;
+    width: 100%;
 }
