@@ -1,0 +1,11 @@
+Model Information:
+* title:	Coin of Empress Catherine II (1796).
+* source:	https://sketchfab.com/3d-models/coin-of-empress-catherine-ii-1796-9c20b32c043e4c3db78b5fe83066809b
+* author:	Archaeological museum (https://sketchfab.com/archmsfbsu)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Coin of Empress Catherine II (1796)." (https://sketchfab.com/3d-models/coin-of-empress-catherine-ii-1796-9c20b32c043e4c3db78b5fe83066809b) by Archaeological museum (https://sketchfab.com/archmsfbsu) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
