@@ -13,10 +13,23 @@ window.addEventListener('wheel', function() {
 
     if (this.event.deltaY > 0 && firstRect.top <= windowCenterY && windowCenterY < secondRect.top && isActive == false) {
         isActive = true;
-        second.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            isActive = false;
-        }, 500);
+        if (animated == false) {
+            secondSlide();
+            this.setTimeout(function(){
+                second.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(function() {
+                    isActive = false;
+                }, 500);    
+            }, 300)    
+        } else {
+            this.setTimeout(function(){
+                second.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(function() {
+                    isActive = false;
+                }, 500);
+            });  
+        }
+
     } else if (this.event.deltaY > 0 && secondRect.top <= windowCenterY && windowCenterY < thirdRect.top && isActive == false){
         isActive = true;
         third.scrollIntoView({ behavior: 'smooth' });
@@ -100,3 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Запускаем анимацию
 });
 
+
+// document.addEventListener('mousemove', function(event) {
+//     var mouseX = event.clientX;
+//     var mouseY = event.clientY;
+
+//     console.log('X: ' + mouseX + ', Y: ' + mouseY);
+// });

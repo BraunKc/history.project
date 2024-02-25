@@ -77,12 +77,21 @@ html, body {
 }
 
 #Ekaterina {
-    z-index: 1;
     font-size: 7vw;
 }
 
 #container3D {
-    z-index: 0;
     height: 0;
     width: 100%;
+}
+
+.lineTo2nd {
+    z-index: -1;
+    position: absolute;
+    height: 200vh;
+    width: 100vw;
+}
+
+#circle {
+    filter: url(#glow);
 }

@@ -31,35 +31,21 @@ function animate() {
     if (object) {
         object.rotation.y += 0.005;
 
-        object.position.x = -5;
-        object.position.y = -1 + Math.sin(Date.now() * 0.001) * 0.2;
+        object.position.x = -4;
+        object.position.y = -1 + Math.sin(Date.now() * 0.001) * .2;
 
-        object.scale.set(10, 10, 10);
+        object.scale.set(0.75, 1, 1);
     }
 
 	renderer.render( scene, camera );
-
-// Функция дебаунсинга для ограничения частоты выполнения функции
-function debounce(func, delay) {
-    let timeout;
-    return function () {
-        const context = this;
-        const args = arguments;
-        clearTimeout(timeout);
-        timeout = setTimeout(function () {
-            func.apply(context, args);
-        }, delay);
-    };
 }
 
-// Слушатель события resize с дебаунсингом
-window.addEventListener("resize", debounce(function () {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    animate();
-}, 250)); // Можно настроить задержку по необходимости
-}
+window.addEventListener("resize", function () {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
 animate();
 
 
