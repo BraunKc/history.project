@@ -9,20 +9,20 @@ const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 let object;
+let objToRender = 'coin';
 
 const loader = new GLTFLoader();
 
-
-loader.load( 'models/coin/scene.gltf', function (gltf) {
+loader.load( `models/${objToRender}/scene.gltf`, function (gltf) {
     object = gltf.scene;
     scene.add(object);
 });
 
-document.getElementById("container3D").appendChild(renderer.domElement);
+document.getElementById("coin3D").appendChild(renderer.domElement);
 
 camera.position.z = 5;
 
-const directionalLight = new THREE.DirectionalLight( 0xffffff, 5 );
+const directionalLight = new THREE.DirectionalLight( 0xfdfff5, 3 );
 directionalLight.position.set(5, 5, 5).normalize();
 scene.add( directionalLight );
 
@@ -47,5 +47,4 @@ window.addEventListener("resize", function () {
 });
 
 animate();
-
 

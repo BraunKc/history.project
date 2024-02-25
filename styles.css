@@ -47,6 +47,7 @@ html, body {
 
 #second {
     background: #000;
+    flex-direction: column;
 }
 
 #third {
@@ -80,7 +81,7 @@ html, body {
     font-size: 7vw;
 }
 
-#container3D {
+#coin3D, #CatherineII3D {
     height: 0;
     width: 100%;
 }
@@ -92,6 +93,11 @@ html, body {
     width: 100vw;
 }
 
-#circle {
-    filter: url(#glow);
+/* SECOND SLIDE */
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 10% 35% 0 35%;
 }
