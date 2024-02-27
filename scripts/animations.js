@@ -1,4 +1,3 @@
-
 let animated = false;
 function secondSlide () {
     if (animated == false) {
@@ -17,7 +16,14 @@ function secondSlide () {
                     easing: 'easeInOutSine',
                     duration: 1500
                 });
+                anime({
+                    targets: '.CatherineII',
+                    duration: 7000,
+                    easing: 'easeInOutSine',
+                    opacity: 90,
+                })
             }
         });
     }
 }
+

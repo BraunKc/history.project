@@ -1,6 +1,8 @@
 var first = document.getElementById('first');
 var second = document.getElementById('second');
 var third = document.getElementById('third');
+var fourth = document.getElementById('fourth');
+
 
 let isActive = false;
 
@@ -8,6 +10,8 @@ window.addEventListener('wheel', function() {
     var firstRect = first.getBoundingClientRect();
     var secondRect = second.getBoundingClientRect();
     var thirdRect = third.getBoundingClientRect();
+    var fourthRect = fourth.getBoundingClientRect();
+
 
     var windowCenterY = window.innerHeight / 2;
 
@@ -36,15 +40,9 @@ window.addEventListener('wheel', function() {
         setTimeout(function() {
             isActive = false;
         }, 500);
-    } else if (this.event.deltaY > 0 && thirdRect.top <= windowCenterY && windowCenterY < firstRect.bottom && isActive == false){
+    } else if (this.event.deltaY > 0 && thirdRect.top <= windowCenterY && windowCenterY < thirdRect.bottom && isActive == false){
         isActive = true;
-        first.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            isActive = false;
-        }, 500);
-    } else if (this.event.deltaY < 0 && firstRect.top <= windowCenterY && windowCenterY < firstRect.bottom && isActive == false) {
-        isActive = true;
-        third.scrollIntoView({ behavior: 'smooth' });
+        fourth.scrollIntoView({ behavior: 'smooth' });
         setTimeout(function() {
             isActive = false;
         }, 500);
@@ -57,6 +55,12 @@ window.addEventListener('wheel', function() {
     } else if (this.event.deltaY < 0 && thirdRect.top <= windowCenterY && windowCenterY < thirdRect.bottom && isActive == false){
         isActive = true;
         second.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(function() {
+            isActive = false;
+        }, 500);
+    } else if (this.event.deltaY < 0 && fourthRect.top <= windowCenterY && windowCenterY < fourthRect.bottom && isActive == false){
+        isActive = true;
+        third.scrollIntoView({ behavior: 'smooth' });
         setTimeout(function() {
             isActive = false;
         }, 500);
@@ -113,10 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Запускаем анимацию
 });
 
+var scrollableElement = document.querySelector('.text2nd');
 
-// document.addEventListener('mousemove', function(event) {
-//     var mouseX = event.clientX;
-//     var mouseY = event.clientY;
-
-//     console.log('X: ' + mouseX + ', Y: ' + mouseY);
-// });
+scrollableElement.addEventListener('wheel', function(e) {
+    var deltaY = e.deltaY || -e.wheelDelta || e.detail; // Различные способы получения значения прокрутки в различных браузерах
+    if ((deltaY < 0 && scrollableElement.scrollTop == 0) || (deltaY > 0 && scrollableElement.scrollHeight - scrollableElement.clientHeight === scrollableElement.scrollTop)) {
+        e.preventDefault(); // Предотвращение прокрутки родительского элемента в случае достижения верхнего или нижнего предела
+    }
+});

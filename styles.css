@@ -10,9 +10,10 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: Nunito;
-    color: #fdfff5;
+    color: #dad7cd;
     scroll-behavior: smooth;
     overflow: hidden;
+    background: #000;
 }
 
 ::selection {
@@ -20,11 +21,10 @@ html, body {
     color: #000;
 }
 
-#first, #second, #third {
+#first, #second, #third, #fourth {
     display: flex;
     height: 100%;
     width: 100%;
-    background: #000;
 }
 
 #first {
@@ -43,15 +43,6 @@ html, body {
     width: 100%;
     background: radial-gradient(#00000091, #000 90%);
     backdrop-filter: blur(3px);
-}
-
-#second {
-    background: #000;
-    flex-direction: column;
-}
-
-#third {
-    background: #555;
 }
 
 .veryBig {
@@ -81,7 +72,7 @@ html, body {
     font-size: 7vw;
 }
 
-#coin3D, #CatherineII3D {
+#coin3D {
     height: 0;
     width: 100%;
 }
@@ -95,9 +86,124 @@ html, body {
 
 /* SECOND SLIDE */
 
+#second {
+    position: relative;
+}
+
+.CatherineII {
+    opacity: 0;
+}
+
+.box2nd {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.introduction {
+    color: #ffcc00;
+}
+
 .text {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
     gap: 25px;
-    padding: 10% 35% 0 35%;
+    padding: 100px 30% 0 17%;
+    font-size: 18px;
+}
+
+.text ul {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#second img {
+    position: absolute;
+    width: 200px;
+    top: 215px;
+    right: 5vw;
+}
+
+/* THIRD SLIDE */
+
+#third {
+    background-image: url(images/magazine.jpg);
+    background-size: cover; /* Растягиваем картинку на весь экран */
+    background-position: center; /* Центрируем картинку */
+    background-repeat: no-repeat; /* Отключаем повторение фона */ 
+}
+
+.blur2nd {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(#0000005e, #000);
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+}
+
+.text2nd {
+    background: #222;
+    text-align: justify;
+    font-size: 22px;
+    width: 60%;
+    height: 87%;
+    border-radius: 25px 0 0 25px;
+    overflow: auto;
+    padding: 50px;
+}
+
+/* Изменение стиля скроллбара */
+.text2nd::-webkit-scrollbar {
+    width: 7px; /* Ширина скроллбара в WebKit (Chrome, Safari) */
+}
+
+.text2nd::-webkit-scrollbar-thumb {
+    background-color: #ffcc00a9; /* Цвет ползунка */
+    border-radius: 2px; /* Скругление углов ползунка */
+}
+
+.text2nd::-webkit-scrollbar-track {
+    background-color: #222; /* Цвет фона скроллбара */
+}
+
+.text2nd::-webkit-scrollbar-thumb:hover {
+    background-color: #ffcc00;
+}
+
+/* FOURTH SLIDE */
+
+#fourth {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(images/Russian\ Imp.png);
+    background-size: cover; /* Растягиваем картинку на весь экран */
+    background-position: center; /* Центрируем картинку */
+    background-repeat: no-repeat; /* Отключаем повторение фона */ 
+}
+
+#fourth ol {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background: #0000009a;
+    padding: 30px;
+    border-radius: 25px;
+    gap: 5px;
+}
+
+#fourth ol h1 {
+    color: #ffcc00;
+    text-align: end;
+}
+
+#fourth hr {
+    margin: 5px;
+    width: 90%;
+    align-self: center;
 }
