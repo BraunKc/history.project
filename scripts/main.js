@@ -2,6 +2,9 @@ var first = document.getElementById('first');
 var second = document.getElementById('second');
 var third = document.getElementById('third');
 var fourth = document.getElementById('fourth');
+var fifth = document.getElementById('fifth');
+var sixth = document.getElementById('#');
+
 
 
 let isActive = false;
@@ -11,6 +14,9 @@ window.addEventListener('wheel', function() {
     var secondRect = second.getBoundingClientRect();
     var thirdRect = third.getBoundingClientRect();
     var fourthRect = fourth.getBoundingClientRect();
+    var fifthRect = fifth.getBoundingClientRect();
+
+
 
 
     var windowCenterY = window.innerHeight / 2;
@@ -46,6 +52,12 @@ window.addEventListener('wheel', function() {
         setTimeout(function() {
             isActive = false;
         }, 500);
+    } else if (this.event.deltaY > 0 && fourthRect.top <= windowCenterY && windowCenterY < fourthRect.bottom && isActive == false){
+        isActive = true;
+        fifth.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(function() {
+            isActive = false;
+        }, 500);
     } else if (this.event.deltaY < 0 && secondRect.top <= windowCenterY && windowCenterY < secondRect.bottom && isActive == false){
         isActive = true;
         first.scrollIntoView({ behavior: 'smooth' });
@@ -61,6 +73,12 @@ window.addEventListener('wheel', function() {
     } else if (this.event.deltaY < 0 && fourthRect.top <= windowCenterY && windowCenterY < fourthRect.bottom && isActive == false){
         isActive = true;
         third.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(function() {
+            isActive = false;
+        }, 500);
+    } else if (this.event.deltaY < 0 && fifthRect.top <= windowCenterY && windowCenterY < fifthRect.bottom && isActive == false){
+        isActive = true;
+        fourth.scrollIntoView({ behavior: 'smooth' });
         setTimeout(function() {
             isActive = false;
         }, 500);
@@ -125,3 +143,6 @@ scrollableElement.addEventListener('wheel', function(e) {
         e.preventDefault(); // Предотвращение прокрутки родительского элемента в случае достижения верхнего или нижнего предела
     }
 });
+
+
+// C&T CO.
